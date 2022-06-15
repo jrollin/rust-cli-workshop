@@ -1,6 +1,6 @@
 ![](app.png)
 
-# Learn Rust by buildin Command Line Application
+# Learn Rust by building Command Line Application
 
 Repository used for workshop
 
