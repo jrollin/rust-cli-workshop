@@ -1,12 +1,12 @@
 ![](app.png)
 
-# Learn Rust by build CLI app
+# Learn Rust by buildin Command Line Application
 
 Repository used for workshop
 
 ## What we will build
 
-Crabby command line !
+🦀 Crabby command line !
 
 ```
 $ crabby --help
