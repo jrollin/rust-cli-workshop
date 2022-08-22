@@ -68,8 +68,23 @@ rustup update
 
 Each part have a working solutions
 
+
 ```bash
 cd solutions
 cargo run 
+```
+
+Run solutions :
+
+
+```bash
+cargo run --bin setup
+```
+
+Run tests:
+
+
+```bash
+cargo test --bin setup
 ```
 
