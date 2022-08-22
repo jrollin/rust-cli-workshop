@@ -40,10 +40,6 @@ TLDR
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-
-
-
-
 ### Verify your toolchain version
 
 Minimum Version : 1.63+
@@ -52,8 +48,13 @@ Minimum Version : 1.63+
 rustc --version
 ```
 
+Keep your rust up-to-date with the latest release of rust, type:
 
-## Instructions 
+```bash
+rustup update
+```
+
+## Workshop instructions 
 
 
 * [Part 1 - Env setup](./1_setup) 
@@ -61,4 +62,14 @@ rustc --version
 * [Part 3 - Command args and options](./3_args)
 * [Part 4 - Better command help documenter son application](./4_documentation)
 * [Part 5 - Api call with Json parsing](./5_api)
+
+
+## Solutions
+
+Each part have a working solutions
+
+```bash
+cd solutions
+cargo run 
+```
 
