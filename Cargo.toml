@@ -1,0 +1,8 @@
+[workspace]
+
+members=[
+    "1_setup/solution",
+    "2_syntax/solution",
+    "3_args/solution"
+]
+

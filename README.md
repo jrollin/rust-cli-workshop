@@ -78,13 +78,15 @@ Run solutions :
 
 
 ```bash
-cargo run --bin setup
+cargo run --bin crabby_setup
+cargo run --bin crabby_syntax
 ```
 
 Run tests:
 
 
 ```bash
-cargo test --bin setup
+cargo test --bin crabby_setup
+cargo test --bin crabby_syntax
 ```
 

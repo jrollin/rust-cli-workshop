@@ -7,9 +7,14 @@ Make your Rust setup environnement ready
 
 ## :pencil: Step 1 - Setup 
 
+Cargo is a big tool in Rust ecosystem \
+It manage dependencies, tasks, project creation, workspaces...
+
 ### Create a new application
 
+
 ```bash
+cd /your/projects/directory/
 cargo new crabby
 ```
 
@@ -33,7 +38,7 @@ Look at newly created directories and files:
 ls ./target/
 ```
 
-You can execute file `./target/debug/crabby` 
+You can execute built file `./target/debug/crabby` 
 
 
 Launch `cargo`:
@@ -49,11 +54,12 @@ cargo build --release
 >
 > Cargo have two predefined profiles
 > * dev (used by default)
-> * release 
+> * release
+>
 > You can add one more profiles
 
 
-### How to run application
+### How to run application ?
 
 
 Launch `cargo`:
@@ -96,11 +102,13 @@ Hello, i am Crabby 🦀 !
 
 > :bulb: Notes
 >
-> crab emoji is not an ASCII Char  
-> String are stored Utf8 encoded in Rust
+> * crab emoji is not an ASCII Char  
+> * String are stored Utf8 encoded in Rust
 
 
 ## :clap: Congrats, you have a working Rust setup !
+
+Check the expected source code  [here](./solution/main.rs) 
 
 
 ## :memo: Summary 
