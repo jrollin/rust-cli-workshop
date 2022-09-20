@@ -4,7 +4,7 @@
 
 Repository used for workshop
 
-## What we will build
+## :dart:  What we will build
 
 🦀 Crabby command line !
 
@@ -28,7 +28,7 @@ SUBCOMMANDS:
 
 ```
 
-## Requirements
+## :pencil: Requirements
 
 You'll need to install:
 
@@ -54,7 +54,17 @@ Keep your rust up-to-date with the latest release of rust, type:
 rustup update
 ```
 
-## Workshop instructions 
+
+### Choose your IDE
+
+
+* VS Code: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust
+* Jetbrains Rust: https://www.jetbrains.com/fr-fr/rust/
+* Vim plugin : https://github.com/simrat39/rust-tools.nvim
+
+[More tools on Rust website](https://www.rust-lang.org/tools)
+
+## :pencil: Workshop instructions 
 
 
 * [Part 1 - Env setup](./1_setup) 
@@ -64,9 +74,12 @@ rustup update
 * [Part 5 - Api call with Json parsing](./5_api)
 
 
-## Solutions
+### :eyes: Solutions
 
-Each part have a working solutions
+> :exclamation: Try your solution first. Errors help to learn with Rust
+
+
+Each part have a working solution
 
 
 ```bash
