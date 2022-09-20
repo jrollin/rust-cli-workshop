@@ -6,6 +6,8 @@ use greetings::greets;
 
 use clap::{Parser, Subcommand};
 
+use crate::chifoumi::random_game;
+
 #[derive(Parser)]
 #[clap(
     author = "Julien Rollin",
@@ -31,8 +33,9 @@ enum Commands {
     Chifoumi {
         #[clap(short = 'a', long, value_enum)]
         one: Game,
+        /// random game if not provided
         #[clap(short = 'b', long, value_enum)]
-        two: Game,
+        two: Option<Game>,
     },
 }
 
@@ -40,10 +43,18 @@ fn main() {
     let cli = Cli::parse();
 
     match &cli.command {
-        Commands::Chifoumi { one, two } => {
-            let result = play(one.clone(), two.clone());
-            println!("p1 vs p2 : {:?}", result);
-        }
+        Commands::Chifoumi { one, two } => match two {
+            // player two provided
+            Some(p) => {
+                let result = play(one.clone(), p.clone());
+                println!("p1: {:?} vs p2: {:?} => {:?}", one, p, result)
+            }
+            None => {
+                let random = random_game();
+                let result = play(one.clone(), random.clone());
+                println!("p1: {:?} vs p2: {:?} => {:?}", one, random, result)
+            }
+        },
         Commands::Greets { name } => {
             println!("{}", greets(&name));
         }
