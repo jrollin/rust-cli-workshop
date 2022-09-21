@@ -1,3 +1,5 @@
 # Api call 
 
-@todo
+* serialization / deserialization
+* http request
+* log 

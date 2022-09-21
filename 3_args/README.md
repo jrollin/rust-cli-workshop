@@ -361,3 +361,7 @@ Read the compiler errors :)
 * use type conversion to convert cli argument to Game `enum`
 
 
+## :clap: Congrats, you understand some useful paradigm in Rust !
+
+Check a solution with unit tests [here](./solution/src/main.rs) 
+

@@ -114,7 +114,7 @@ let json = r#"
 
 ``` 
 
-:buld: Notes 
+:bulb: Notes 
 
 * [Slices vs Strings](https://doc.rust-lang.org/book/ch04-03-slices.html)
 
@@ -455,7 +455,7 @@ error[E0004]: non-exhaustive patterns: `(?, ?)` not covered
 
 ## :clap: Congrats, you understand some useful paradigm in Rust !
 
-Check a solution with unit tests [here](./solution/main.rs) 
+Check a solution with unit tests [here](./solution/src/main.rs) 
 
 ## :memo: Summary 
 

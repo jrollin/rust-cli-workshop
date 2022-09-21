@@ -71,7 +71,7 @@ rustup update
 * [Part 2 - Syntax](./2_syntax)
 * [Part 3 - Command args and options](./3_args)
 * [Part 4 - Better command help documenter son application](./4_cli)
-* [Part 5 - Api call with Json parsing](./5_api)
+* [Part 5 - Api call with Json parsin (wip)](./5_api)
 
 
 ### :eyes: Solutions

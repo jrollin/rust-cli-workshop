@@ -108,7 +108,7 @@ Hello, i am Crabby 🦀 !
 
 ## :clap: Congrats, you have a working Rust setup !
 
-Check the expected source code  [here](./solution/main.rs) 
+Check the expected source code  [here](./solution/src/main.rs) 
 
 
 ## :memo: Summary 

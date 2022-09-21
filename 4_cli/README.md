@@ -253,3 +253,6 @@ Refactor your app code with Clap and Subcommand
 ```bash 
 cargo run -- chifoumi rock
 ```
+## :clap: Congrats, you can imagine building any cli now !
+
+Check a solution with unit tests [here](./solution/src/main.rs) 
