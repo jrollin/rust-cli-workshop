@@ -2,14 +2,24 @@
 
 ## :dart: Objective 
 
-Manipulate Rust syntax inside Unit Test
+Manipulate Rust syntax needed for our CLI
 
-* assignation
+* variable declaration and assignation
 * basic types
 * compound types
+* operator 
+* statement vs expression 
 * unit test
 
-## Review of main Rust syntax / types 
+## :pencil: Part 1 - Understand main Rust syntax / types 
+
+Let discover some Rust Syntax and concepts
+
+:bulb: Notes 
+
+Take time to read this part\
+You can refer to it when writing exercice implementation\
+Everything needed is described below.
 
 ### Variables and assignations 
 
@@ -43,27 +53,17 @@ let b = 100000000;
 let foo = 3_i64;
 let bar = foo as i32;
 
-// no changing value
+// no changing value 
 const FOREVER_AGE: u8 = 18;
+static LANGUAGE: &str = "Rust";
 
+// mutability
 let age = 5; // declare variable
 age = 18 //boom, variables are immutable by default
 
 let mut age = 6; // add mut keyword
 age = 5; // ok 
 ```
-
-
-```rust
-// syntax to specifiy numbers 
-123_456   // underscore as separator
-0x12      // prefix 0x to indicate hex value
-0o23      // prefix 0o to indicate octal value
-0b0001    // prefix 0b to indicate binary value
-b'a'      // A single byte character
-
-```
-
 
 ```rust
 print!("display line without newline")
@@ -77,20 +77,42 @@ println!("display with placeholders {} and new line", 1);
 
 ```
 
+```rust
+// syntax to specifiy numbers 
+123_456   // underscore as separator
+0x12      // prefix 0x to indicate hex value
+0o23      // prefix 0o to indicate octal value
+0b0001    // prefix 0b to indicate binary value
+b'a'      // A single byte character
 
+// example with formatting print
+println!("Base 10 repr:               {}",   69420);
+println!("Base 2 (binary) repr:       {:b}", 69420);
+println!("Base 8 (octal) repr:        {:o}", 69420);
+println!("Base 16 (hexadecimal) repr: {:x}", 69420);
+println!("Base 16 (hexadecimal) repr: {:X}", 69420);
 
-:bulb: Notes
+```
+
+:pushpin: Remember
 
 * variables are immutable if no `m̀ut` keyword specified
 * type can be explicit or infered when possible for compiler
+* println! can format types to text 
+
+:books: More resources
+
+* [variables and mutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html)
 * [formatting options](https://doc.rust-lang.org/stable/std/fmt/index.html#formatting-traits)
+
+
 
 ## Strings vs slices 
 
 
 ```rust 
 // String literals, not mutable
-let x: &str = "hello world!";  // note lowercase syntax
+let x: &str = "hello world!";  // note lowercase syntax "str"
 
 // String 
 let s: String = "Hello world".to_string(); // camelCase syntax
@@ -114,10 +136,15 @@ let json = r#"
 
 ``` 
 
-:bulb: Notes 
+:pushpin: Remember
+
+* Strings literals are not mutable (stored on stack)
+* Strings is more conveniant than &str but less "performant" (stored on heap)
+
+:books: More resources
 
 * [Slices vs Strings](https://doc.rust-lang.org/book/ch04-03-slices.html)
-
+* [references and borrowing](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
 
 ## Vectors, arrays, tuples
 
@@ -137,10 +164,18 @@ let (a, b, c) = x;
 println!("{} {} {}", a, b, c); // 1 hello 3.4
 ``` 
 
-:bulb:
+:pushpin: Remember
 
+* array have fixed size 
+* vector have dynamic size
+* destructing is commonly used in match  
 * functions with `!` like `vec![]` are macro. Rust replace it with code at compilation
 
+:books: More resources 
+
+* [destructuring](https://doc.rust-lang.org/rust-by-example/flow_control/match/destructuring.html)
+* [arrays and slices](https://doc.rust-lang.org/rust-by-example/primitives/array.html) 
+ 
 ## Types 
 
 ```rust
@@ -180,17 +215,21 @@ enum Actions {
 }
 ```
 
+:pushpin: Remember
+
+* Rust do not mix data and behaviour. You don't have "classes" like in Java
+* `enum` are powerful and commonly used with `match`  operator
+
+:books: More resources
+
+* [structures](https://doc.rust-lang.org/rust-by-example/custom_types/structs.html)
+* [enum](https://doc.rust-lang.org/rust-by-example/custom_types/enum.html)
 
 ## Optional and Result 
 
+Rust have to specific enum already defined
+
 ```rust
-
-// Enum with fields
-enum OptionalI32 {
-       AnI32(i32),
-        Nothing,
-}
-
 // An output can have either Some value or no value/ None.
 enum Option<T> { // T is a generic and it can contain any type of value.
     Some(T),
@@ -212,6 +251,16 @@ match v.get(idx) {
 }
 ```
 
+:pushpin: Remember
+
+* There are no Exception in Rust. Either you have a succesful operation  or an Error
+* There are non Null or Void in Rust.  Either you have a value or an absence of value  
+
+:books: More resources 
+
+* [Option](https://doc.rust-lang.org/rust-by-example/error/option_unwrap.html)
+* [Result](https://doc.rust-lang.org/rust-by-example/error/result.html)
+* [error handling](https://doc.rust-lang.org/rust-by-example/error.html)
 
 ## Functions and iterator 
 
@@ -258,7 +307,20 @@ fn main() {
 fn whatever() -> () {}
 ```
 
-## :pencil: Write a simple function
+
+:pushpin: Remember
+
+* statements need `;` keyword
+* note the absence of `return whatever ;` keyword when evaluating expression 
+* match operator evaluates all possible values
+
+:books: More resources
+
+* [expression](https://doc.rust-lang.org/rust-by-example/expression.html)
+* [functions](https://doc.rust-lang.org/rust-by-example/fn.html)
+* [match](https://doc.rust-lang.org/rust-by-example/flow_control/match.html)
+
+## :pencil: Exercice 1 - Write a simple function with Unit Test
 
 
 ```rust 
@@ -271,8 +333,6 @@ fn add(a: u8, b: u8 ) -> u8 {
 }
 
 ```
-
-## :pencil: Setup your first unit test
 
 add tests module in your main file
 
@@ -305,20 +365,21 @@ cargo test
 * `cfg(test)` indicates that this part of code is only used in testing context
 
 
-:clap: Congrats, you have written your first Unit test ! 
+:tada: Congrats, you have written your first Unit test ! 
 
 
-## :pencil: Fall in love with the compiler 
+
+### Let's play with our code 
 
 Let make some changes in our previous function
 
 
-#### Add test with values higher than 255  ?
+#### 1) Add test with values higher than 255  ?
 
 Change signatures and launch test
 
 <details>
-<summary> Check `cargo test`  output </summary>
+<summary>&#128073; Check <code>cargo test</code>  output </summary>
 
 ```bash
    |
@@ -331,14 +392,14 @@ Change signatures and launch test
 </details>
 
 
-#### Replace u8 with f64
+#### 2) Replace u8 with i64
 
 
-Change first argument signature with `f64` and launch test
+Change first argument signature with `i64` and launch test
 
 
 <details>
-<summary>Check cargo test output </summary>
+<summary>&#128073; Check <code>cargo test</code> output </summary>
 
 
 ```bash
@@ -386,12 +447,17 @@ error: could not compile `crabby_syntax` due to 3 previous errors
 </details>
 
 
+#### Embrace changes with compiler love
+
+Rust compiler warning and hints help you detect and fix problems very fast
+
 :bulb: Notes 
 
-Compiler is really an helping tools that explicit reason of failure\
-Most of the time, it will give a solution or hint and a link to related documentation
+* Compiler is really an helping tools that explicits reason of failure 
+* Most of the time, it will give a solution or hint and a link to related documentation
+* some consider rust compiler as your pair 
 
-## :pencil: Exercice 
+## :pencil: Part 2 - Write a chifoumi game logic 
 
 
 Write Chifoumi game logic (Rock, Paper, Scissors)  
@@ -399,6 +465,9 @@ Write Chifoumi game logic (Rock, Paper, Scissors)
 * Rock beats scissors
 * Scissors beats paper
 * Paper beats rock
+
+
+Write the missing code
 
 ```rust
 #[derive(Debug)]
@@ -417,22 +486,27 @@ fn play( a: ?, b: ?) -> GameResult {
     // your code
 } 
 
+
+fn main() {
+    // define your games a and b
+    // call play function with arguments
+    // display result 
+}
 ```
 
-To Display variable without custom implementation, you can add `#derive(Debug)̀`
+:bulb: Notes 
+
+* `#[derive(Debug)]` :  asks the compiler to auto-generate a suitable implementation of the Debug trait to display Struct
+* `#[derive(PartialEq)]` : asks the compiler to enables use of the == and != operator by implementin 'PartialEq' trait (Useful in trait) 
+
+Display variable without custom implementation, you can add `#derive(Debug)̀`
 
 ```rust
 println!("Debug {:?}", variable);
 ```
 
-
-:bulb: Notes 
-
-* #[derive(Debug)] : Rust implementation to display enum value
-* #[derive(PartialEq)] : Rust implementation to compare values (useful in unit test)
-
 <details>
-<summary>Implementation Tips </summary>
+<summary>&#128073; Implementation Tips </summary>
 Instead of using if/else to compare values, you can use match operator 
 
 
@@ -453,7 +527,9 @@ error[E0004]: non-exhaustive patterns: `(?, ?)` not covered
 
 
 
-## :clap: Congrats, you understand some useful paradigm in Rust !
+## :clap: Congrats
+
+You understand enough syntax and Rust Concepts to code a chifoumi
 
 Check a solution with unit tests [here](./solution/src/main.rs) 
 
@@ -461,12 +537,9 @@ Check a solution with unit tests [here](./solution/src/main.rs)
 
 What you have learned
 
-* variables
-* types 
-* functions
-* unit test 
+* declare and assign variables
+* express how to store data with primitives or custom types  
+* define functions
+* write and launch unit test
 
 
-## :books: Resources 
-
-* [Data types](https://doc.rust-lang.org/book/ch03-02-data-types.html)
