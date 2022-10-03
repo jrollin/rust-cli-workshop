@@ -83,6 +83,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "crabby_mod"
+version = "0.1.0"
+
+[[package]]
 name = "crabby_setup"
 version = "0.1.0"
 

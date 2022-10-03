@@ -1,8 +1,11 @@
-![](app.png)
+[![Rust](https://github.com/jrollin/rust-cli-workshop/actions/workflows/rust.yml/badge.svg)](https://github.com/jrollin/rust-cli-workshop/actions/workflows/rust.yml)
+
+![screenshot](app.png)
 
 # Learn Rust by building Command Line Application
 
 Repository used for workshop
+
 
 ## :dart:  What we will build
 
@@ -86,8 +89,9 @@ rustup update
 * [Part 1 - Env setup](./1_setup) 
 * [Part 2 - Syntax](./2_syntax)
 * [Part 3 - Command args and options](./3_args)
-* [Part 4 - Better command help documenter son application](./4_cli)
-* [Part 5 - Api call with Json parsin (wip)](./5_api)
+* [Part 4 - Modules and conversion](./4_mod)
+* [Part 5 - Better command help documenter son application](./5_cli)
+* [Part 6 - Api call with Json parsin (wip)](./6_api)
 
 
 ### :eyes: Solutions
@@ -130,6 +134,7 @@ cargo test
 cargo test --bin crabby_setup
 cargo test --bin crabby_syntax
 cargo test --bin crabby_args
+cargo test --bin crabby_mod
 cargo test --bin crabby_cli
 ```
 

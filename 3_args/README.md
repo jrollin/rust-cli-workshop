@@ -1,16 +1,18 @@
 # Learn how to parse arguments
 
+In order to interact with our cli, we need to provide and retrieve arguments
+
 ## :dart: Objectives
 
-
+* interact with environnement
 * add dependencies
 * parse arguments 
-* errors handling
+* manage errors
 * use modules
 * type conversion
 
 
-## Retrieve cli arguments
+## :pencil: Retrieve cli arguments
 
 Rust already imports common used symbols like Vec, String, Option and Result.\
 For other symbols, you must import module with `use` keyword
@@ -45,16 +47,19 @@ Equivalent to `./target/debug/crabby foo bar 1`
 
 
 Common libraries provided in Rust standard library 
-* fmt
-* env
-* io 
-* path
-* fs
+* fmt: format
+* env: environment
+* io: input and output
+* path: working with path abstraction
+* fs: filesystem
 
-[more about std library](https://doc.rust-lang.org/std/)
+:books: More resources 
+
+* [std library](https://doc.rust-lang.org/std/)
+* [std modules](https://doc.rust-lang.org/std/#modules)
 
 
-## Manage Errors
+## :pencil: Manage Errors
 
 Update our code to greets with argument passed to our app
 
@@ -82,7 +87,7 @@ Hello, john 🦀 !
 What happens if no argument is provided ?
 
 <details>
-<summary>Check by yourself to see error</summary>
+<summary>&#128073; Check by yourself to see error</summary>
 
 ```bash
 $ cargo run -- 
@@ -217,49 +222,6 @@ match args.get(1).unwrap().parse::<u32>() {
 * [Str parse method](https://doc.rust-lang.org/std/primitive.str.html#method.parse)
 
 
-## Organize code in modules
-
-Modules and use Let you control the organization, scope, and privacy of paths
-
-Let split our code in differents files
-
-```bash
-|-src
-  |- main.rs
-  |- greetings.rs
-```
-
-```rust
-// greetings.rs
-pub fn greets(name: &str) {
-    println!("Hello, {} 🦀 !", name);
-}
-```
-Nb: functions are private by defaut, you must add `pub` keyword
-
-
-```rust
-// main.rs
-use std::env;
-
-mod greetings; //declare module 
-use greetings::greets; // import function
-
-fn main() {
-    let args: Vec<String> = env::args().collect();
-
-    let name = args.get(1).expect("Name is required");
-    greets(&name);
-}
-```
-
-
-
-More about modules :
-
-* [crates and modules](https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html)
-
-
 
 ### Type conversion
 
@@ -323,23 +285,8 @@ assert!(try_successful_smaller_number.is_ok());
 * [TryFrom documentation](https://doc.rust-lang.org/std/convert/trait.TryFrom.html)
 * [convert module documentation](https://doc.rust-lang.org/std/convert/index.html)
 
-### :pencil: Exercice 1 : move your previous code to modules
 
-Expected directory tree :
-
-```bash
-|-src
-  |- main.rs
-  |- greetings.rs
-  |- chifoumi.rs
-```
-
-:bulb: Tips 
-
-* do not forget visibility
-* you need to declare module and import functions
-
-### :pencil: Exercice 2 : Update application to execute two commands
+### :pencil: Exercice : Update application to execute two commands
 
 ```bash
 cargo run greets You
@@ -361,7 +308,20 @@ Read the compiler errors :)
 * use type conversion to convert cli argument to Game `enum`
 
 
-## :clap: Congrats, you understand some useful paradigm in Rust !
+## :clap: Congrat 
+
+You understand how to interact with your cli !
 
 Check a solution with unit tests [here](./solution/src/main.rs) 
+
+
+## :memo: Summary 
+
+What you have learned
+
+* use module
+* manage errors 
+* parse type
+
+
 
