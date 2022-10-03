@@ -4,11 +4,13 @@
 
 Make your Rust setup environnement ready
 
+* Initialize project
+* compile and run 
 
-## :pencil: Step 1 - Setup 
+## :pencil: Setup project with cargo
 
-Cargo is a big tool in Rust ecosystem \
-It manage dependencies, tasks, project creation, workspaces...
+[Cargo](https://doc.rust-lang.org/cargo/) is the Rust Package Manager \
+It manage dependencies, tasks, project creation, workspaces... (can be compare to Npm)
 
 ### Create a new application
 
@@ -18,15 +20,21 @@ cd /your/projects/directory/
 cargo new crabby
 ```
 
+Move to your application directory :
+
+```bash
+cd crabby
+```
+
 > :bulb: Notes 
 >
 > Cargo create a git repository with all structure by default  
 > use `cargo new --help` for more options
 
-### How to build application
+### How to build application ?
 
 
-Launch `cargo`:
+Launch compilation with `cargo` command:
 
 ```bash
 cargo build
@@ -38,61 +46,51 @@ Look at newly created directories and files:
 ls ./target/
 ```
 
-You can execute built file `./target/debug/crabby` 
+A new `debug`directory have been created in `target`
+
+You can execute built file :
+
+```bash
+./target/debug/crabby
+```
 
 
-Launch `cargo`:
+
+Launch compilation with release profile:
 
 ```bash
 cargo build --release
 ```
 
-
-
-
-> :bulb: Notes 
->
-> Cargo have two predefined profiles
-> * dev (used by default)
-> * release
->
-> You can add one more profiles
-
-
-### How to run application ?
-
-
-Launch `cargo`:
+You have a new `release` directory in `./target`
 
 ```bash
-cargo run 
+ls ./target
+.
+.. 
+debug
+release
 ```
 
-:question:  Look at executed file 
 
-`Running 'target/debug/crabby'`
-
-
-
-
-> :bulb: Notes 
-> 
-> Cargo run builds app with dev profile and execute produced binary file
-
-
-### How to test
+### How to test ?
 
 
 Launch `cargo`:
 
 ```bash
 cargo test 
+
+    Finished test [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/main.rs 
+
+running 0 tests
 ```
 
-:exclamation: No test are writtien yet...Coming soon
+:exclamation: No test are writtien yet...
 
 
-## :pencil: Step 2 - change output
+## :pencil: Exercice
 
 change the programm output with : 
 
@@ -106,7 +104,9 @@ Hello, i am Crabby 🦀 !
 > * String are stored Utf8 encoded in Rust
 
 
-## :clap: Congrats, you have a working Rust setup !
+## :clap: Congrats 
+
+You have a working Rust setup !
 
 Check the expected source code  [here](./solution/src/main.rs) 
 
@@ -121,7 +121,7 @@ What you have learned
 * Test project
 
 
-## :books: Resources 
+## :books: Additional resources 
 
 * [Cargo profiles](https://doc.rust-lang.org/book/ch14-01-release-profiles.html)
 * [Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
