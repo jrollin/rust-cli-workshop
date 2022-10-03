@@ -42,7 +42,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ### Verify your toolchain version
 
-Minimum Version : 1.63+
+Minimum Version : 1.64+ 
 
 ```bash
 rustc --version
@@ -58,9 +58,14 @@ rustup update
 ### Choose your IDE
 
 
-* VS Code: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust
-* Jetbrains Rust: https://www.jetbrains.com/fr-fr/rust/
-* Vim plugin : https://github.com/simrat39/rust-tools.nvim
+* VS Code: 
+    * [Rust language](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust)
+    * [Rust Analyzer Language Server Protocol](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+    * [TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml)
+* Jetbrains Rust: 
+    * https://www.jetbrains.com/fr-fr/rust/
+* Vim plugin : 
+    * https://github.com/simrat39/rust-tools.nvim
 
 [More tools on Rust website](https://www.rust-lang.org/tools)
 
@@ -101,8 +106,10 @@ cargo run --bin crabby_cli
 
 > bin name is defined in related `Cargo.toml` files
 
-Run tests:
 
+### :zap: Tests
+
+> You are not required to write test during workshop but it always a good pratice so have a look !
 
 ```bash
 // all
