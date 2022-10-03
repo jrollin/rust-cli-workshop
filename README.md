@@ -32,13 +32,20 @@ SUBCOMMANDS:
 
 You'll need to install:
 
-- [Rust](https://www.rust-lang.org/tools/install)
+- [Rust installation instructions](https://www.rust-lang.org/tools/install)
 
-TLDR 
+TLDR;
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
+
+:warning: Note on Windows
+
+Rust requires certain C++ build tools.
+You can either download the [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/), or (recommended) you might prefer just to install [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/).
+
+[More about Installation setup on windows](https://learn.microsoft.com/en-us/windows/dev-environment/rust/setup)
 
 ### Verify your toolchain version
 
@@ -93,7 +100,7 @@ Each part have a working solution
 
 ```bash
 // inside each directory 
-cd solutions
+cd <partx>/solutions
 cargo run 
 ```
 
@@ -108,7 +115,7 @@ cargo run --bin crabby_args
 cargo run --bin crabby_cli
 ```
 
-> bin name is defined in related `Cargo.toml` files
+> bin name is defined in related `<partx>/solutions/Cargo.toml` files
 
 
 ### :zap: Tests
