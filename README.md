@@ -17,14 +17,14 @@ I am the crabby help usage.
 USAGE:
     crabby <SUBCOMMAND>
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+OPTIONS:
+    -h, --help       Print help information
+    -V, --version    Print version information
 
 SUBCOMMANDS:
-    greets    Say my name !
-    help      Prints this message or the help of the given subcommand(s)
-    learn     I can learn things
+    chifoumi    chifoumi with players
+    greets      Greets with name
+    help        Print this message or the help of the given subcommand(s)
 
 ```
 
@@ -46,6 +46,10 @@ Minimum Version : 1.64+
 
 ```bash
 rustc --version
+```
+
+```bash
+rustc 1.64.0 (a55dd71d5 2022-09-19)
 ```
 
 Keep your rust up-to-date with the latest release of rust, type:
@@ -121,4 +125,10 @@ cargo test --bin crabby_syntax
 cargo test --bin crabby_args
 cargo test --bin crabby_cli
 ```
+
+
+## :books: Additional resources 
+
+* [Rust Book](https://doc.rust-lang.org/book/)
+* [Rust by Example](https://doc.rust-lang.org/rust-by-example/) 
 
