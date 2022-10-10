@@ -52,11 +52,17 @@ let b = 100000000;
 // casting
 let foo = 3_i64;
 let bar = foo as i32;
+```
 
+```rust
 // no changing value 
 const FOREVER_AGE: u8 = 18;
 static LANGUAGE: &str = "Rust";
+```
 
+
+
+```rust
 // mutability
 let age = 5; // declare variable
 age = 18 //boom, variables are immutable by default
@@ -150,11 +156,12 @@ let json = r#"
 
 ```rust
 // A fixed-size array of four i32 elements
-let four_ints: [i32; 4] = [1, 2, 3, 4];
+let mut four_ints: [i32; 4] = [1, 2, 3, 4];
+four_ints[4] = 9 // boom, index of bound, cannot extend size
 
 // A dynamic array (vector)
 let mut vector: Vec<i32> = vec![1, 2, 3, 4]; // vec! is a macro
-vector.push(5);
+vector.push(5); // ok, vector have no fixed size
 
 //tuples
 let x: (i32, &str, f64) = (1, "hello", 3.4);
@@ -167,7 +174,7 @@ println!("{} {} {}", a, b, c); // 1 hello 3.4
 :pushpin: Remember
 
 * array have fixed size 
-* vector have dynamic size
+* vector have dynamic size (and many methods to manipulate data)
 * destructing is commonly used in match  
 * functions with `!` like `vec![]` are macro. Rust replace it with code at compilation
 
@@ -227,7 +234,7 @@ enum Actions {
 
 ## Optional and Result 
 
-Rust have to specific enum already defined
+Rust have some enum already defined `Option` and `Result`
 
 ```rust
 // An output can have either Some value or no value/ None.
@@ -236,13 +243,7 @@ enum Option<T> { // T is a generic and it can contain any type of value.
     None,
 }
 
-// A result can represent either success/ Ok or failure/ Err.
-// T and E are generics. T can contain any type of value, E can be any error.
-enum Result<T, E> {     
-    Ok(T),
-    Err(E),
-}
-
+// retrieve an element in collection can be Some or None
 let v = vec![10, 20, 30]; // initialization macro    
 let idx = 0;
 match v.get(idx) {
@@ -251,9 +252,25 @@ match v.get(idx) {
 }
 ```
 
+```rust
+// A result can represent either success/ Ok or failure/ Err.
+// T and E are generics. T can contain any type of value, E can be any error.
+enum Result<T, E> {     
+    Ok(T),
+    Err(E),
+}
+
+// try to convert string to integer can fail
+let num = "10";
+match num.parse::<i32>() {
+        Ok(value) => println!("Num is an integer {}", value),
+        Err(e) => println!("Not an integer... {}", e),
+}
+```
+
 :pushpin: Remember
 
-* There are no Exception in Rust. Either you have a succesful operation  or an Error
+* There are no Exception in Rust. Either you have a successful operation  or an Error
 * There are non Null or Void in Rust.  Either you have a value or an absence of value  
 
 :books: More resources 
@@ -279,24 +296,6 @@ if x % 3 == 0 && x % 5 == 0 {
 } else {
     println!("{}", x)
 }
-
-// pattern matching 
- match (self % 3, self % 5) {
-    (0, 0) => String::from("FizzBuzz"),
-    (0, _) => String::from("Fizz"),
-    (_, 0) => String::from("Buzz"),
-    _ => format!("{}", self),
-} 
-
-
-fn main() {
-    let sum: i32 =
-        (0..5)                   // this is an iterator
-        .filter(|i| is_even(*i)) // filter with a closure
-        .sum();                  // consume the iterator
-        
-    println!("sum of even numbers is {}", sum);
-}
 ```
 
 :warning: There are no null value in Rust
@@ -306,6 +305,32 @@ fn main() {
 
 fn whatever() -> () {}
 ```
+
+```rust
+// pattern matching 
+ match (self % 3, self % 5) {
+    (0, 0) => String::from("FizzBuzz"),
+    (0, _) => String::from("Fizz"),
+    (_, 0) => String::from("Buzz"),
+    _ => format!("{}", self),
+} 
+
+```
+```rust
+let sum: i32 =
+    (0..5)                   // this is an iterator
+    .filter(|i| is_even(*i)) // filter with a closure
+    .sum();                  // consume the iterator
+    
+println!("sum of even numbers is {}", sum);
+
+//nb: vector is not an iterator
+let numbers = vec![1,2,3,4];
+let even = numbers.into_iter()                  //get iterator from collection
+                .filter(|index| index % 2 == 0) // only keep even
+                .collect::<Vec<i32>>();         //collect into vector with explicit type
+```
+
 
 
 :pushpin: Remember
@@ -319,6 +344,7 @@ fn whatever() -> () {}
 * [expression](https://doc.rust-lang.org/rust-by-example/expression.html)
 * [functions](https://doc.rust-lang.org/rust-by-example/fn.html)
 * [match](https://doc.rust-lang.org/rust-by-example/flow_control/match.html)
+* [iterators](https://doc.rust-lang.org/book/ch13-02-iterators.html)
 
 ## :pencil: Exercice 1 - Write a simple function with Unit Test
 
@@ -352,7 +378,7 @@ mod tests {
 
 ```
 
-Run test with cargo 
+Run your first test with cargo 
 
 ```Bash
 cargo test
@@ -542,4 +568,5 @@ What you have learned
 * define functions
 * write and launch unit test
 
-
+### Next Part 
+[:call_me_hand: Go to next part: command arguments and options](../3_args/README.md)
