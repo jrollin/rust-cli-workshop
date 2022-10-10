@@ -83,6 +83,15 @@ rustup update
 
 [More tools on Rust website](https://www.rust-lang.org/tools)
 
+### Alternative to IDE
+
+> When your computer is annoying or you are not admin...
+
+* Online Playground
+  * https://play.rust-lang.org/
+* gitpod (inside brower or in your IDE)
+  * [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jrollin/rust-cli-workshop)
+
 ## :pencil: Workshop instructions 
 
 
