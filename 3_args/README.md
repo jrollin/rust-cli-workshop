@@ -38,26 +38,25 @@ $ cargo run -- foo bar 1
 ["/your/path/target/debug/crabby", "foo", "bar", 1]
 ```
 
-:bulb: Notes
+:pushpin: Remember
 
 * every arguments after `--` are passed to the program. \
 Avoid mixing argument with `cargo run` program options (ex: cargo run --help)\
 Equivalent to `./target/debug/crabby foo bar 1`
-* [documentation about prelude](https://doc.rust-lang.org/std/prelude/index.html)
+* Arguments collected are Strings
 
-
-Common libraries provided in Rust standard library 
-* fmt: format
-* env: environment
-* io: input and output
-* path: working with path abstraction
-* fs: filesystem
+:bulb: Common libraries provided in Rust standard library 
+* fmt: [formatting and printing](https://doc.rust-lang.org/std/fmt/)
+* env: [inspect and manipulate process environment](https://doc.rust-lang.org/std/env/)
+* io: [input and output](https://doc.rust-lang.org/std/io/)
+* path: [working with path abstraction](https://doc.rust-lang.org/stable/std/path/)
+* fs: [filesystem](https://doc.rust-lang.org/stable/std/fs/)
 
 :books: More resources 
 
 * [std library](https://doc.rust-lang.org/std/)
 * [std modules](https://doc.rust-lang.org/std/#modules)
-
+* [documentation about prelude](https://doc.rust-lang.org/std/prelude/index.html)
 
 ## :pencil: Manage Errors
 
@@ -159,6 +158,10 @@ let name = args.get(1).expect("Name is required");
 
 Try to pass an integer as argument and print square 
 
+```Bash
+cargo run -- 2
+```
+
 What happens when we execute this code ?
 
 ```rust
@@ -167,7 +170,7 @@ println!("{} square is {}", x , x*x );
 ```
 
 <details>
-<summary>Try before reveal</summary>
+<summary>&#128073; Check by yourself to see error</summary>
 
 ```bash
 let x: u32 = args.get(1).unwrap();
@@ -199,7 +202,7 @@ Examples of usage
 ```rust
 // Ok 
 let four: u32 = "4".parse().unwrap(); // explicit type annotation
-let four = "4".parse::<u32>().unwrap(); // turbofish annotation
+let four = "4".parse::<u32>().unwrap(); // same but with turbofish annotation
 
 //Err 
 let notaninteger = "whatever".parse::<u32>().unwrap();
@@ -225,9 +228,12 @@ match args.get(1).unwrap().parse::<u32>() {
 
 ### Type conversion
 
+When you want to match a type to another, Rust provided `trait` to implement custom behaviour
 
 
-Use From
+#### From trait
+
+Use can `From` trait when you assume conversion must success
 
 ```rust
 use std::convert::From;
@@ -249,13 +255,16 @@ fn main() {
 }
 ```
 
+> If you handle `From` trait you don't have to handle equivalent `Into` trait
 
-Use tryFrom when conversion can fail
+#### TryFrom trait
+
+Use `tryFrom` trait when conversion can fail (you handle this case)
 
 It uses Result enum type
 
 ```rust 
-// example from doc.rs
+// example to convert an integer to a custom struct
 struct GreaterThanZero(i32);
 
 impl TryFrom<i32> for GreaterThanZero {
@@ -280,19 +289,30 @@ let try_successful_smaller_number = i32::try_from(3);
 assert!(try_successful_smaller_number.is_ok());
 ```
 
+:pushpin: Remember
+
+* You must handle conversion yourself with traits
+* you decide if failure ends your program or not 
+
 :bulb: notes 
 
 * [TryFrom documentation](https://doc.rust-lang.org/std/convert/trait.TryFrom.html)
+* [From / Into](https://doc.rust-lang.org/rust-by-example/conversion/from_into.html)
 * [convert module documentation](https://doc.rust-lang.org/std/convert/index.html)
 
 
 ### :pencil: Exercice : Update application to execute two commands
+
+
+Greetings 
 
 ```bash
 cargo run greets You
 
 Hello, You 🦀 !
 ```
+
+Chifoumi 
 
 ```bash
 cargo run chifoumi rock paper
@@ -302,13 +322,16 @@ p1 vs p2 : Lost
 
 Read the compiler errors :) 
 
-:bulb: tips
-* String can be create from &str with `String::from()`
-* &str can created from String with  `.as_str()̀`
+:bulb: Tips
+* `String` can be created from `&str` with `String::from()`
+* `&str` can be created from String with  `.as_str()̀`
 * use type conversion to convert cli argument to Game `enum`
 
+:books: More resources
 
-## :clap: Congrat 
+* [String](https://doc.rust-lang.org/rust-by-example/std/str.html?highlight=String%3A%3Afrom#strings)
+
+## :clap: Congrats
 
 You understand how to interact with your cli !
 
@@ -322,6 +345,8 @@ What you have learned
 * use module
 * manage errors 
 * parse type
+* convertion with traits
 
 
-
+### Next Part 
+[:call_me_hand: Go to next part: modules](../4_mod/README.md)
