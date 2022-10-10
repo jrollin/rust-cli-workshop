@@ -1,5 +1,8 @@
 # Learn how organize code
 
+Our cli have two functionalities (greetings and chifoumi)\
+It is always better to split logic in different files
+
 
 ## :dart: Objectives
 
@@ -42,15 +45,32 @@ fn main() {
 }
 ```
 
+:pushpin: Remember
 
+* declare module and declare usage
+* visibibility is private by default
 
-More about modules :
+:books: More resources
 
 * [crates and modules](https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html)
 
 
+## :pencil: Exercice: Split app in different modules
 
 
+Expected tree 
+
+
+```bash
+|-src
+  |- main.rs
+  |- greetings.rs
+  |- chifoumi.rs
+```
+
+:bulb: Tips
+
+* do not forget visiblity
 
 ## :clap: Congrats
 
@@ -58,3 +78,13 @@ you understand how to organize code in modules
 
 Check a solution with unit tests [here](./solution/src/main.rs) 
 
+## :memo: Summary
+
+What you have learned
+
+* modules
+* visibility
+
+### Next Part 
+
+[:call_me_hand: Go to next part: Clap](../5_cli/README.md)
