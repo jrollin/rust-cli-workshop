@@ -72,6 +72,21 @@ debug
 release
 ```
 
+### Compile and Run
+
+A common way to run code when developing is to use `cargo run`
+
+```bash
+cargo run
+
+   Compiling crabby v0.1.0 (/your/project/crabby)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.43s
+     Running `/your/project/crabby/target/debug/crabby`
+
+Hello, i am Crabby 🦀 !
+```
+
+cargo compiles with debug profile if needed and run compiled program
 
 ### How to test ?
 
@@ -126,3 +141,8 @@ What you have learned
 * [Cargo profiles](https://doc.rust-lang.org/book/ch14-01-release-profiles.html)
 * [Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
 * [Rust string and UTF8](https://doc.rust-lang.org/book/ch08-02-strings.html)
+
+
+
+### Next Part 
+[:call_me_hand: Go to next part: Syntax](../2_syntax/README.md)
