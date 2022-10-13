@@ -1,11 +1,14 @@
-# Add Usage to your application
+# Add help and usage
+
+What about features not in standard Rust Library ?\
+Our cli can manage many subcommands but usage is not documented\
+How to build a cli with nice usage help  ?
 
 
 ## :dart: Objectives
 
-
-* manager dependencies
-* manage cli with clap
+* add external libraries from crates.io
+* use Clap as command line argument parser
 
 
 ## Import Modules 
@@ -14,6 +17,9 @@ Rust provides many libraries out of the box but at a time, we need specifics fea
 
 [Crates.io](https://crates.io/) is the defaut public repository where to search modules
 
+:bulb: Notes 
+
+What about playing chifoumi with computer as opponent ?
 
 ### Add a lib to generate random number
 
@@ -44,14 +50,14 @@ Updating crates.io index
 
 ```
 
-Tips:
+:books: Additional resources
 
 * [cargo add documentation](https://doc.rust-lang.org/cargo/commands/cargo-add.html) (ex: specify version, features,etc)
 
 
-### Option 2: Add dependency manualy 
+### Option 2: Add dependency manually 
 
-Add dependeny in `cargo.toml`
+Add dependency in `cargo.toml`
 ```toml
 [dependencies]
 rand = "0.8.5"
@@ -74,13 +80,15 @@ fn main() {
 
  ```
 
-[rand documentation](https://docs.rs/crate/rand/latest)
+:books: Additional resources
+
+* [rand documentation](https://docs.rs/crate/rand/latest)
 
 ## Use Clap to parse our cli arguements
 
-Clap a commonly used module to create Cli application in Rust
+[Clap](https://docs.rs/clap/latest/clap/) a commonly used crate for Cli application in Rust
 
-With Derive feature, we can setup a Clip in some lines 
+With Derive feature, we can setup a Cli in few lines 
 
 
 ```rust
@@ -109,7 +117,6 @@ fn main() {
 }
 ```
 
-> You can describe command without derive too
 
 
 ```bash
@@ -126,11 +133,24 @@ OPTIONS:
     -n, --name <NAME>      Name of the person to greet
     -V, --version          Print version information
 
+```
+
+```bash
 $ demo --name Me
 Hello Me!
 ```
 
-### Focus on Module Feature 
+:bulb: Notes
+
+* You can describe commands without annotation if you want
+
+
+:books: Additional resources
+
+* [Clap doc](https://docs.rs/clap/latest/clap/)
+* [Clap github](https://github.com/clap-rs/clap)
+
+### Focus on crates features
 
 Cargo "features" provide a mechanism to express conditional compilation and optional dependencies.
 
@@ -167,28 +187,35 @@ Updating crates.io index
              - yaml-rust
 
 ```
-Derive Feature is no enabled
+Note that `Derive` Feature is no enabled
+
+:books: Additonal resource
+
+* [Cargo features](https://doc.rust-lang.org/cargo/reference/features.html)
 
 #### Option 1: use cargo add 
+
+use cargo add option -F (or --features)
 
 ```bash
 cargo add clap -F derive
 ```
 
+
 #### Option 2: Edit Cargo.toml
+
+Update dependencies
 
 ```toml
 [dependencies]
 clap = { version = "3.2.22", features = ["derive"] }
 ```
 
-:bulb: Notes 
-
-* [cargo feature documentation](https://doc.rust-lang.org/cargo/reference/features.html)
-
 
 ## Clap provides subcommand 
 
+We want to have distinct options for each cli functionality (greets and chifoumi)\
+Clap provides functionality to create subcommand with struct and enum
 
 ```rust
 use clap::{Parser, Subcommand};
@@ -248,11 +275,56 @@ cargo run -- greets --help
 
 Refactor your app code with Clap and Subcommand
 
-## :pencil: Exercice 2:  Generate Chifoumi player 2 choice with random value
+you shoud see beautiful cli usage when running your app
+
+```bash
+$ crabby --help
+
+crabby 0.1.0
+I am the crabby help usage.
+
+USAGE:
+    crabby <SUBCOMMAND>
+
+OPTIONS:
+    -h, --help       Print help information
+    -V, --version    Print version information
+
+SUBCOMMANDS:
+    chifoumi    chifoumi with players
+    greets      Greets with name
+    help        Print this message or the help of the given subcommand(s)
+
+
+```
+
+## :pencil: Exercice 2:  Play Chifoumi against computer
+
+If no player two is provided use a random game value for player 2
 
 ```bash 
-cargo run -- chifoumi rock
+cargo run -- chifoumi -a paper
+
+p1: Paper vs p2: Scissors => Lost
+
 ```
-## :clap: Congrats, you can imagine building any cli now !
+
+
+## :clap: Congrats
+
+you can imagine building any cli now !
 
 Check a solution with unit tests [here](./solution/src/main.rs) 
+
+## :pencil: Summary
+
+What you learned 
+
+* add crate with features
+* parse and document usage of cli app with clap
+
+## Next Part
+
+[:call_me_hand: Go to next part: API](../6_api/README.md)
+
+
