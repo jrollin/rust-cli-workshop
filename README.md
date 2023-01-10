@@ -52,14 +52,14 @@ You can either download the [Microsoft C++ Build Tools](https://visualstudio.mic
 
 ### Verify your toolchain version
 
-Minimum Version : 1.64+ 
+Minimum Version : 1.66+ (tested) 
 
 ```bash
 rustc --version
 ```
 
 ```bash
-rustc 1.64.0 (a55dd71d5 2022-09-19)
+rustc 1.66.0 (69f9c33d7 2022-12-12)
 ```
 
 Keep your rust up-to-date with the latest release of rust, type:
