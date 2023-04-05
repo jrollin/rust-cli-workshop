@@ -1,0 +1,19 @@
+[package]
+## should be named crabby by following workshop
+## different name because used as workspace member to check all projects easily
+name = "crabby_api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.2.1", features = ["derive"] }
+cli-table = "0.4.7"
+rand = "0.8.5"
+reqwest = { version = "0.11.16", features = ["json", "blocking"] }
+serde = { version = "1.0.159", features = ["derive"] }
+thiserror = "1.0.40"
+
+[dev-dependencies]
+mockito = "1.0.2"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
