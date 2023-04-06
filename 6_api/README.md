@@ -1,11 +1,11 @@
-# Api call 
+# Make Api call 
 
 We want to list all articles related to a keyword by making a call to a news API
 
 ## :dart: Objectives
 
 * serialization / deserialization
-* make http request
+* make HTTP request
 
 ## Our API
 
@@ -21,16 +21,16 @@ An example with Curl :
 curl -i http://hn.algolia.com/api/v1/search?query=rust
 ```
 
-Header Content-Type 
+Headers :
 
 ```bash
 HTTP/2 200
 date: Wed, 05 Apr 2023 12:31:00 GMT
 content-type: application/json; charset=utf-8
-
 ```
+We can check that `content-type` is Json.
 
-Body content
+Look at the HTTP body content :
 
 ```bash
 {
@@ -87,7 +87,7 @@ Body content
 }
 ```
 
-We need to parse the body of the HTTP response provided as Json String into our data structure in Rust 
+We need to parse the body of the HTTP response provided as Json String into our data structure in Rust. 
 
 => This a `Deserialisation` 
 
@@ -127,22 +127,21 @@ pub struct SearchResult {
 
 ```
 
-:bulb: We use a macro `rename_all` to rename deserialized string from a camel case convention to a Rust snake case convention
+:bulb: We use a macro `rename_all` to rename deserialized string from a `camelCase` convention to a Rust `snake_case` convention
 
 
 
 :books: Additional resources
 
 * [Serde documentation](https://doc.rust-lang.org/cargo/commands/cargo-add.html) (ex: specify version, features,etc)
-
-
+* [curl documentation](https://github.com/curl/curl)
 
 
 ## Make an HTTP request
 
 The [reqwest](https://docs.rs/reqwest/latest/reqwest/) crate provides a convenient, higher-level HTTP Client. 
 
-We need to add our library to project :
+We need to add our library to our project :
 
 ```basH
 cargo add reqwest -F json blocking
@@ -151,7 +150,7 @@ cargo add reqwest -F json blocking
 :bulb: Reqwest supports async and blocking requests. For now, we use a blocking client.
 
 
-Example of GET Http request : 
+Example of GET HTTP request : 
 
 ```rust
 // format valid URL
@@ -164,13 +163,14 @@ match http_response {
     Err(e) => Err(e),
 }
 ```
+
 We have to deal with two types of Error :
  * error when doing HTTP call
- * error when deserialize 
+ * error when deserializing 
 
-When first error occurs we don't want to try deserialization
+When first error occurs we don't want to try deserialization. It breaks  the logic flow.
         
-To avoid `spaghetti code` we can use `question mark  ?` operator
+To avoid `spaghetti code` we can use `question mark  ?` operator :
 
 ```rust
 let query = format!("http://hn.algolia.com/api/v1/search?query={}", keyword);
@@ -194,16 +194,16 @@ cargo run -- search --keyword <whatever>
 
 
 :bulb: Tips : 
-* update Command enum 
+* update command to add `search` 
 * implement the `search_news` function in a new `search` module
 * manage errors messages 
-* create a function to display results as list
+* create a function to display results as list 
 
 
 ### :pencil: Exercice : display search results as table
 
 
-Use [Cli Table](https://docs.rs/cli-table/latest/cli_table/index.html#) to display result as table
+Use [Cli Table](https://docs.rs/cli-table/latest/cli_table/index.html#) to display results as table
 
 
 ```bash
@@ -222,7 +222,7 @@ Use [Cli Table](https://docs.rs/cli-table/latest/cli_table/index.html#) to displ
 
 ## :clap: Congrats
 
-you can connect your app to any API 
+you can connect your app to any API now ! 
 
 Check a solution with unit tests [here](./solution/src/main.rs) 
 

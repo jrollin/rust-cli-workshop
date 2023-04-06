@@ -2,7 +2,7 @@
 ## should be named crabby by following workshop
 ## different name because used as workspace member to check all projects easily
 name = "crabby_api"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
 [dependencies]

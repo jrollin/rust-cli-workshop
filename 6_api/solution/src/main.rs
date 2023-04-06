@@ -29,7 +29,7 @@ enum Commands {
         #[clap(short, long, value_parser)]
         name: String,
     },
-    /// chifoumi with players
+    /// Play chifoumi with players
     Chifoumi {
         #[clap(short = 'a', long, value_enum)]
         one: Game,
@@ -37,6 +37,7 @@ enum Commands {
         #[clap(short = 'b', long, value_enum)]
         two: Option<Game>,
     },
+    /// Search news by keyword
     Search {
         /// search news related to this keyword
         #[clap(short = 'k', long, value_parser)]
