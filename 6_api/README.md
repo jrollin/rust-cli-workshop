@@ -18,7 +18,7 @@ The results are in Json
 An example with Curl :
 
 ```bash
-curl -i http://hn.algolia.com/api/v1/search?query=rust
+curl -i https://hn.algolia.com/api/v1/search?query=rust
 ```
 
 Headers :
@@ -154,7 +154,7 @@ Example of GET HTTP request :
 
 ```rust
 // format valid URL
-let query = format!("http://hn.algolia.com/api/v1/search?query={}", keyword);
+let query = format!("https://hn.algolia.com/api/v1/search?query={}", keyword);
 // execute HTTP call
 let http_response: Result<Result, Error> = reqwest::blocking::get(query);
 // Try to deserialize if response success
@@ -173,7 +173,7 @@ When first error occurs we don't want to try deserialization. It breaks  the log
 To avoid `spaghetti code` we can use `question mark  ?` operator :
 
 ```rust
-let query = format!("http://hn.algolia.com/api/v1/search?query={}", keyword);
+let query = format!("https://hn.algolia.com/api/v1/search?query={}", keyword);
 let http_response = reqwest::blocking::get(query)?;
 let search_results: SearchResult = http_response.json::<SearchResult>()?;
 ```
