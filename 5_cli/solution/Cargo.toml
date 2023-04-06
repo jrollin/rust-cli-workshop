@@ -2,11 +2,11 @@
 ## should be named crabby by following workshop
 ## different name because used as workspace member to check all projects easily
 name = "crabby_cli"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
 [dependencies]
-clap = { version = "3.2.23", features = ["derive"] }
+clap = { version = "4.2.1", features = ["derive"] }
 rand = "0.8.5"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
