@@ -14,21 +14,19 @@ Repository used for workshop
 ```
 $ crabby --help
 
-crabby 0.1.0
-I am the crabby help usage.
+Crabby cli
 
-USAGE:
-    crabby <SUBCOMMAND>
+Usage: crabby_api <COMMAND>
 
-OPTIONS:
-    -h, --help       Print help information
-    -V, --version    Print version information
+Commands:
+  greets    Greets with name
+  chifoumi  Play chifoumi with players
+  search    Search news by keyword
+  help      Print this message or the help of the given subcommand(s)
 
-SUBCOMMANDS:
-    chifoumi    chifoumi with players
-    greets      Greets with name
-    help        Print this message or the help of the given subcommand(s)
-
+Options:
+  -h, --help     Print help
+  -V, --version  Print version
 ```
 
 ## :pencil: Requirements
@@ -52,14 +50,14 @@ You can either download the [Microsoft C++ Build Tools](https://visualstudio.mic
 
 ### Verify your toolchain version
 
-Minimum Version : 1.66+ (tested) 
+Minimum Version : 1.68+ (tested) 
 
 ```bash
 rustc --version
 ```
 
 ```bash
-rustc 1.66.0 (69f9c33d7 2022-12-12)
+rustc 1.68.2 (9eb3afe9e 2023-03-27)
 ```
 
 Keep your rust up-to-date with the latest release of rust, type:
@@ -78,7 +76,7 @@ rustup update
     * [TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml)
 * Jetbrains Rust: 
     * https://www.jetbrains.com/fr-fr/rust/
-* Vim plugin : 
+* Vim/Neovim plugin : 
     * https://github.com/simrat39/rust-tools.nvim
 
 [More tools on Rust website](https://www.rust-lang.org/tools)
@@ -100,7 +98,7 @@ rustup update
 * [Part 3 - Command args and options](./3_args)
 * [Part 4 - Modules and conversion](./4_mod)
 * [Part 5 - Better command help documenter son application](./5_cli)
-* [Part 6 - Api call with Json parsin (wip)](./6_api)
+* [Part 6 - Api call with Json Parsing](./6_api)
 
 
 ### :eyes: Solutions
@@ -126,6 +124,7 @@ cargo run --bin crabby_setup
 cargo run --bin crabby_syntax
 cargo run --bin crabby_args
 cargo run --bin crabby_cli
+cargo run --bin crabby_api
 ```
 
 > bin name is defined in related `<partx>/solutions/Cargo.toml` files
@@ -145,6 +144,7 @@ cargo test --bin crabby_syntax
 cargo test --bin crabby_args
 cargo test --bin crabby_mod
 cargo test --bin crabby_cli
+cargo test --bin crabby_api
 ```
 
 
