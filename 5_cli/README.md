@@ -158,34 +158,24 @@ Cargo "features" provide a mechanism to express conditional compilation and opti
 cargo add clap
 
 Updating crates.io index
-      Adding clap v3.2.22 to dependencies.
-             Features:
-             + atty
-             + color
-             + std
-             + strsim
-             + suggestions
-             + termcolor
-             - backtrace
-             - cargo
-             - clap_derive
-             - debug
-             - deprecated
-             - derive
-             - env
-             - once_cell
-             - regex
-             - terminal_size
-             - unicase
-             - unicode
-             - unstable-doc
-             - unstable-grouped
-             - unstable-replace
-             - unstable-v4
-             - wrap_help
-             - yaml
-             - yaml-rust
-
+Adding clap v4.2.1 to dependencies.
+     Features:
+     + color
+     + error-context
+     + help
+     + std
+     + suggestions
+     + usage
+     - cargo
+     - debug
+     - deprecated
+     - derive
+     - env
+     - string
+     - unicode
+     - unstable-doc
+     - unstable-v5
+     - wrap_help
 ```
 Note that `Derive` Feature is no enabled
 
@@ -208,7 +198,7 @@ Update dependencies
 
 ```toml
 [dependencies]
-clap = { version = "3.2.22", features = ["derive"] }
+clap = { version = "4.2.1", features = ["derive"] }
 ```
 
 
