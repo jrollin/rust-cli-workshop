@@ -9,3 +9,6 @@ members=[
     "6_api/solution"
 ]
 
+exclude = [
+    "_notes"
+]
