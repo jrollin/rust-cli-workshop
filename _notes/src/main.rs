@@ -1,8 +1,12 @@
+use std::fmt::{self, Debug, Display, Formatter};
+
 fn main() {
     // string
     chars_unicode();
     // iterators and ownership
     iterator_ownership();
+    // derive vs impl
+    derive_vs_impl();
 }
 
 fn chars_unicode() {
@@ -68,4 +72,40 @@ fn iterator_ownership() {
         *x *= 2;
     }
     println!("mutable reference : {:?}", collec_refmut);
+}
+
+fn derive_vs_impl() {
+    println!("Rust Debug and Display implementation:");
+    let w = Whatever::new("About derive");
+    println!("Display : {}", w);
+    println!("Debug: {:?}", w);
+    println!("Debug raw: {:#?}", w);
+}
+
+// dumb struct for trait
+struct Whatever {
+    inner: String,
+}
+
+// struct constructor convention
+impl Whatever {
+    fn new(inner: &str) -> Self {
+        Self {
+            inner: inner.to_string(),
+        }
+    }
+}
+
+impl Display for Whatever {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        write!(f, "(Whatever : {})", self.inner)
+    }
+}
+
+impl Debug for Whatever {
+    fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+        f.debug_struct("Whatever")
+            .field("inner", &self.inner)
+            .finish()
+    }
 }
