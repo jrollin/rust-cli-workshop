@@ -71,7 +71,6 @@ rustup update
 
 
 * VS Code: 
-    * [Rust language](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust)
     * [Rust Analyzer Language Server Protocol](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
     * [TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml)
 * Jetbrains Rust: 
