@@ -1,5 +1,5 @@
 [workspace]
-
+resolver="2"
 members=[
     "1_setup/solution",
     "2_syntax/solution",
