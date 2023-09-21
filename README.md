@@ -67,14 +67,13 @@ rustup update
 
 ### Choose your IDE
 
-- VS Code:
-  - [Rust language](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust)
-  - [Rust Analyzer Language Server Protocol](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
-  - [TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml)
-- Jetbrains Rust:
-  - https://www.jetbrains.com/fr-fr/rust/
-- Vim/Neovim plugin :
-  - https://github.com/simrat39/rust-tools.nvim
+* VS Code: 
+    * [Rust Analyzer Language Server Protocol](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+    * [TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml)
+* Jetbrains Rust: 
+    * https://www.jetbrains.com/fr-fr/rust/
+* Vim/Neovim plugin : 
+    * https://github.com/simrat39/rust-tools.nvim
 
 [More tools on Rust website](https://www.rust-lang.org/tools)
 
