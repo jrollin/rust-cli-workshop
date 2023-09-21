@@ -56,7 +56,7 @@ fn main() {
             }
         },
         Commands::Greets { name } => {
-            println!("{}", greets(&name));
+            println!("{}", greets(name));
         }
     }
 }

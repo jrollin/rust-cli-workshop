@@ -14,7 +14,7 @@ fn main() {
     match cmd.as_str() {
         "greets" => {
             let name = args.get(2).expect("Name is required for greetings");
-            println!("{}", greets(&name));
+            println!("{}", greets(name));
         }
         "chifoumi" => {
             let p_one = args.get(2).expect("Player one is required for chifoumi");
