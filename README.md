@@ -6,8 +6,7 @@
 
 Repository used for workshop
 
-
-## :dart:  What we will build
+## :dart: What we will build
 
 🦀 Crabby command line !
 
@@ -50,14 +49,14 @@ You can either download the [Microsoft C++ Build Tools](https://visualstudio.mic
 
 ### Verify your toolchain version
 
-Minimum Version : 1.68+ (tested) 
+Minimum Version : 1.72+ (tested)
 
 ```bash
 rustc --version
 ```
 
 ```bash
-rustc 1.68.2 (9eb3afe9e 2023-03-27)
+rustc 1.72.1 (d5c2e9c34 2023-09-13)
 ```
 
 Keep your rust up-to-date with the latest release of rust, type:
@@ -66,9 +65,7 @@ Keep your rust up-to-date with the latest release of rust, type:
 rustup update
 ```
 
-
 ### Choose your IDE
-
 
 * VS Code: 
     * [Rust Analyzer Language Server Protocol](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
@@ -84,38 +81,33 @@ rustup update
 
 > When your computer is annoying or you are not admin...
 
-* Online Playground
-  * https://play.rust-lang.org/
-* gitpod (inside brower or in your IDE)
-  * [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jrollin/rust-cli-workshop)
+- Online Playground
+  - https://play.rust-lang.org/
+- gitpod (inside brower or in your IDE)
+  - [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jrollin/rust-cli-workshop)
 
-## :pencil: Workshop instructions 
+## :pencil: Workshop instructions
 
-
-* [Part 1 - Env setup](./1_setup) 
-* [Part 2 - Syntax](./2_syntax)
-* [Part 3 - Command args and options](./3_args)
-* [Part 4 - Modules and conversion](./4_mod)
-* [Part 5 - Better command help documenter son application](./5_cli)
-* [Part 6 - Api call with Json Parsing](./6_api)
-
+- [Part 1 - Env setup](./1_setup)
+- [Part 2 - Syntax](./2_syntax)
+- [Part 3 - Command args and options](./3_args)
+- [Part 4 - Modules and conversion](./4_mod)
+- [Part 5 - Better command help documenter son application](./5_cli)
+- [Part 6 - Api call with Json Parsing](./6_api)
 
 ### :eyes: Solutions
 
 > :exclamation: Try your solution first. Errors help to learn with Rust
 
-
 Each part have a working solution
 
-
 ```bash
-// inside each directory 
+// inside each directory
 cd <partx>/solutions
-cargo run 
+cargo run
 ```
 
 Run solutions :
-
 
 ```bash
 // from git root directory
@@ -127,7 +119,6 @@ cargo run --bin crabby_api
 ```
 
 > bin name is defined in related `<partx>/solutions/Cargo.toml` files
-
 
 ### :zap: Tests
 
@@ -146,9 +137,7 @@ cargo test --bin crabby_cli
 cargo test --bin crabby_api
 ```
 
+## :books: Additional resources
 
-## :books: Additional resources 
-
-* [Rust Book](https://doc.rust-lang.org/book/)
-* [Rust by Example](https://doc.rust-lang.org/rust-by-example/) 
-
+- [Rust Book](https://doc.rust-lang.org/book/)
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/)

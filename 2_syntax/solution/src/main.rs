@@ -2,6 +2,7 @@ fn main() {
     println!("Hello, i am Crabby 🦀 !");
 }
 
+#[allow(dead_code)]
 fn add(a: u8, b: u8) -> u8 {
     a + b
 }
@@ -20,6 +21,7 @@ pub enum GameResult {
     Lost,
 }
 
+#[allow(dead_code)]
 fn play(a: Game, b: Game) -> GameResult {
     match (a, b) {
         // win
