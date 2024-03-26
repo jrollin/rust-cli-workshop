@@ -12,7 +12,6 @@ pub struct Article {
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct SearchResult {
-    pub nb_hits: u64,
     pub hits: Vec<Article>,
 }
 

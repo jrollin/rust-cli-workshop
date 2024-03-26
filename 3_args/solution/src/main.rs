@@ -1,4 +1,4 @@
-use std::{convert::TryFrom, env};
+use std::env;
 
 #[derive(Debug)]
 pub enum Game {
