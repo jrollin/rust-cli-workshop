@@ -6,14 +6,14 @@ version = "0.1.1"
 edition = "2021"
 
 [dependencies]
-clap = { version = "4.2.1", features = ["derive"] }
-cli-table = "0.4.7"
-rand = "0.8.5"
-reqwest = { version = "0.11.20", features = ["json", "blocking"] }
-serde = { version = "1.0.188", features = ["derive"] }
-thiserror = "1.0.48"
+clap = { version = "4.5", features = ["derive"] }
+cli-table = "0.4"
+rand = "0.8"
+reqwest = { version = "0.12", features = ["json", "blocking"] }
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "1.0"
 
 [dev-dependencies]
-mockito = "1.2.0"
+mockito = "1.4"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
