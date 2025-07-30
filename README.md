@@ -6,6 +6,10 @@
 
 Repository used for workshop
 
+- [DevFest 2022](https://devfest2022.gdgnantes.com/sessions/apprenez_rust_pas_a_pas_en_construisant_une_application_en_ligne_de_commande)
+- [Touraine Tech 2023](https://2023.touraine.tech/talk/8Y1SA6Pfjj2LIrbUa037)
+- [Devoxx France 2023](https://www.linkedin.com/posts/julien-rollin_devoxx2023-rust-workshop-activity-7052547713011175424-Y9eJ?utm*source=share&utm_medium=member_desktop&rcm=ACoAAASjY7MBTgDoEfy3CVx-9lB7ne*-jg9ZcGk)
+
 ## :dart: What we will build
 
 🦀 Crabby command line !
@@ -49,7 +53,7 @@ You can either download the [Microsoft C++ Build Tools](https://visualstudio.mic
 
 ### Verify your toolchain version
 
-Minimum Version : 1.72+ (tested)
+Minimum Version : 1.72+ (tested with 1.8.8)
 
 ```bash
 rustc --version
@@ -67,13 +71,13 @@ rustup update
 
 ### Choose your IDE
 
-* VS Code: 
-    * [Rust Analyzer Language Server Protocol](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
-    * [TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml)
-* Jetbrains Rust: 
-    * https://www.jetbrains.com/fr-fr/rust/
-* Vim/Neovim plugin : 
-    * https://github.com/simrat39/rust-tools.nvim
+- VS Code:
+  - [Rust Analyzer Language Server Protocol](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+  - [TOML](https://marketplace.visualstudio.com/items?itemName=bungcip.better-toml)
+- Jetbrains Rust:
+  - https://www.jetbrains.com/fr-fr/rust/
+- Vim/Neovim plugin :
+  - https://github.com/simrat39/rust-tools.nvim
 
 [More tools on Rust website](https://www.rust-lang.org/tools)
 
