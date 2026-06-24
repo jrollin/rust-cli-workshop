@@ -53,7 +53,7 @@ You can either download the [Microsoft C++ Build Tools](https://visualstudio.mic
 
 ### Verify your toolchain version
 
-Minimum Version : 1.72+ (tested with 1.8.8)
+Minimum Version : 1.80+ (tested with 1.96.0)
 
 ```bash
 rustc --version

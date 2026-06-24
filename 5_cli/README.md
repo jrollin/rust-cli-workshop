@@ -31,7 +31,7 @@ What about playing chifoumi with computer as opponent ?
 cargo add rand
 
 Updating crates.io index
-      Adding rand v0.8.5 to dependencies.
+      Adding rand v0.10.1 to dependencies.
              Features:
              + alloc
              + getrandom
@@ -60,22 +60,22 @@ Updating crates.io index
 Add dependency in `cargo.toml`
 ```toml
 [dependencies]
-rand = "0.8.5"
+rand = "0.10.1"
 ```
 
 
 Example of usage
 
  ```rust
- use rand::Rng;
+ use rand::RngExt;
 
 fn main() {
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
 
-    let n1: u8 = rng.gen();
+    let n1: u8 = rng.random();
     println!("Random u8: {}", n1);
 
-    println!("Integer de 0 to 3 included: {}", rng.gen_range(0..=3));
+    println!("Integer de 0 to 3 included: {}", rng.random_range(0..=3));
 }
 
  ```
@@ -158,7 +158,7 @@ Cargo "features" provide a mechanism to express conditional compilation and opti
 cargo add clap
 
 Updating crates.io index
-Adding clap v4.2.1 to dependencies.
+Adding clap v4.6.1 to dependencies.
      Features:
      + color
      + error-context
@@ -198,7 +198,7 @@ Update dependencies
 
 ```toml
 [dependencies]
-clap = { version = "4.2.1", features = ["derive"] }
+clap = { version = "4.6.1", features = ["derive"] }
 ```
 
 

@@ -1,4 +1,4 @@
-use rand::Rng;
+use rand::RngExt;
 
 #[derive(Debug, clap::ValueEnum, Clone)]
 pub enum Game {
@@ -28,8 +28,8 @@ pub enum GameResult {
 }
 
 pub fn random_game() -> Game {
-    let mut rng = rand::thread_rng();
-    let val = rng.gen_range(0..3);
+    let mut rng = rand::rng();
+    let val = rng.random_range(0..3);
     match val {
         0 => Game::Rock,
         1 => Game::Paper,
